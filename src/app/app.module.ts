@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {AuthModule} from "./auth/auth.module";
 import {HttpClientModule} from "@angular/common/http";
+import {AngularTokenModule} from "angular-token";
 
 @NgModule({
   declarations: [
@@ -14,9 +15,14 @@ import {HttpClientModule} from "@angular/common/http";
     BrowserModule,
     AppRoutingModule,
     AuthModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularTokenModule.forRoot({
+      apiBase: '/api',
+    })
   ],
-  providers: [],
+  providers: [
+    AngularTokenModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

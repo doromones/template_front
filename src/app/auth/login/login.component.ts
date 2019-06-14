@@ -38,15 +38,15 @@ export class LoginComponent implements OnInit {
     const val = this.form.value;
 
     this.loading = true;
-    this.authService.login(val.email, val.password)
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.router.navigate([this.returnUrl]);
-        },
-        error => {
-          this.error = error;
-          this.loading = false;
-        });
+    this.authService.signIn(val.email, val.password)
+    //   .pipe(first())
+    //   .subscribe(
+    //     data => {
+    //       this.router.navigate([this.returnUrl]);
+    //     },
+    //     error => {
+    //       this.error = error;
+    //       this.loading = false;
+    //     });
   }
 }
